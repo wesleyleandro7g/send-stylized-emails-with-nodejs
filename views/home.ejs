@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Plotmail</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@200&display=swap" rel="stylesheet">
+    
+        <style>
+            :root {
+                font-size: 32px;
+
+                --primary-color: #ff6600;
+                --background-color: #e6e6e6;
+                --background-color-variant: #f2f2f2;
+                --text-color-white: #ffffff;
+                --gray: #757575;
+                --success: #00B35D;
+                --success-variant: #2BE88D;
+                --error: #FA5757;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Comfortaa', cursive;
+            }
+            body {
+                background-color: var(--background-color);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            header {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                padding: 0 2rem;
+            }
+            .title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+            .button-default {
+                background-color: var(--gray);
+                padding: .5rem;
+                border-radius: 6px;
+                border: none;
+                text-transform: capitalize;
+                color: var(--text-color-white);
+                font-weight: bold;
+                font-size: .5rem;
+                transition: all 200ms ease-in-out;
+                box-shadow: 2px 10px 15px -3px rgba(0,0,0,0.1);
+            }
+            .button-default:hover {
+                cursor: pointer;
+                background-color: var(--success);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1 class="title">Plotmail</h1>
+            </div>
+            <div>
+                <div>
+                    <button class="button-default">test connection</button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div>
+
+            </div>
+        </main>
+    </body>
+</html>
+
+<!-- 
+For printing variable these tags are used: <%= %>
+    <h1 class="title"> <%= title %> </h1>
+    
+For business logic these tags are used: <% %> 
+    <% if(true){ %>
+        <h4>The best</h4>
+    <% } %>
+-->

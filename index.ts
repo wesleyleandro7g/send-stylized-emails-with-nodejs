@@ -13,9 +13,13 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 app.get("/", (req: Request, res: Response) => {
-  return res.send("SERVER IS RUNNING!");
+  res.render("home", {
+    title: "Desencoder",
+  });
 });
 
 transporter.verify((error, success) => {
