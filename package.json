@@ -6,6 +6,9 @@
   "repository": "https://github.com/wesleyleandro7g/send-stylized-emails-with-nodejs",
   "author": "Wesley Leandro",
   "license": "MIT",
+  "scripts": {
+    "start:dev": "nodemon index.ts"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
@@ -24,6 +27,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^4.2.1",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   }
 }
