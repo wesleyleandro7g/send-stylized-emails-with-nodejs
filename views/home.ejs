@@ -61,7 +61,74 @@
                 cursor: pointer;
                 background-color: var(--success);
             }
+            @keyframes spin {
+                0% {
+                transform: rotate(0deg);
+                }
+                100% {
+                transform: rotate(360deg);
+                }
+            }
+            .loader {
+                border: 2px solid var(--text-color-white); /* Light grey */
+                border-top: 2px solid transparent; /* Blue */
+                border-radius: 50%;
+                align-self: center;
+                align-items: center;
+                width: .5rem;
+                height: .5rem;
+                animation: spin 500ms linear infinite;                
+            }
+            .alert {
+                position: absolute;
+                bottom: 2rem;
+                right: 2rem;
+                padding: 0.6rem 0.8rem;
+                border-radius: 8px;
+                background-color: var(--success);
+                box-shadow: 2px 10px 15px -3px rgba(0,0,0,0.1);
+                visibility: hidden;
+                border: none;
+                cursor: pointer;
+                transition: all 300ms ease-in-out;
+            }
+            .alert h6 {
+                font-size: .6rem;
+                font-weight: 500;
+                color: var(--text-color-white);
+            }
         </style>
+
+        <script>
+            function testConnection() {
+                document.getElementById('loader-btn').style = 'display: initial'
+                document.getElementById('test-btn').style = 'display: none'
+
+                fetch('/test').then(function (response) {
+                    return response.json();
+                }).then(function (res) {
+                    console.log(res)
+                    document.getElementById('loader-btn').style = 'display: none'
+                    document.getElementById('test-btn').style = 'display: initial'
+
+                    document.getElementById('alert').style = 'visibility: visible'
+                    document.getElementById('alert').innerHTML = `<h6 id="message">${res.message}</h6>`
+
+                    setTimeout(() => {
+                        document.getElementById('alert').style = 'visibility: hidden'
+                    }, 3000)
+                }).catch(function (err) {
+                    console.warn('Something went wrong.', err);
+                    document.getElementById('loader-btn').style = 'display: none'
+                    document.getElementById('test-btn').style = 'display: initial'
+                    return alert(res.message)
+                });
+            }
+
+            function closeAlert() {
+                document.getElementById('alert').style = 'visibility: hidden'
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -70,14 +137,15 @@
             </div>
             <div>
                 <div>
-                    <button class="button-default">test connection</button>
+                    <button id='test-btn' class="button-default"  onclick="testConnection()">test connection</button>
+                    <button disabled id="loader-btn" class="button-default" style="display: none;" onclick="testConnection()">
+                        <div class="loader"></div>
+                    </button>
                 </div>
             </div>
         </header>
         <main class="container">
-            <div>
-
-            </div>
+            <button id="alert" class='alert' onclick="closeAlert()"></button>
         </main>
     </body>
 </html>

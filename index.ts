@@ -18,16 +18,18 @@ app.set("view engine", "ejs");
 
 app.get("/", (req: Request, res: Response) => {
   res.render("home", {
-    title: "Desencoder",
+    title: "Plotmail",
   });
 });
 
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error);
-  } else if (success) {
-    console.log("smtp service connected!");
-  }
+app.get("/test", (req, res) => {
+  transporter.verify((error, success) => {
+    if (error) {
+      res.status(400).json({ message: "smpt service not connected!" });
+    } else if (success) {
+      res.status(200).json({ message: "smpt service connected!" });
+    }
+  });
 });
 
 const server = http.createServer(app);
