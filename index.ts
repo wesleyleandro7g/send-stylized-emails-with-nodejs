@@ -1,10 +1,16 @@
+import "reflect-metadata";
+import "express-async-errors";
+
 import http from "http";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import path from "path";
 import dotenv from "dotenv";
 
-import transporter from "./src/config/smtp";
+import { TestConnectionController } from "./src/controllers/testConnectionController/TestConnectionController";
+import { InternalError } from "./src/config/generateError";
+
+const testConnection = new TestConnectionController();
 
 const app = express();
 
@@ -22,15 +28,17 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
-app.get("/test", (req, res) => {
-  transporter.verify((error, success) => {
-    if (error) {
-      res.status(400).json({ message: "smpt service not connected!" });
-    } else if (success) {
-      res.status(200).json({ message: "smpt service connected!" });
+app.get("/test", testConnection.test);
+
+app.use(
+  (err: InternalError, req: Request, res: Response, next: NextFunction) => {
+    if (err && err.statusCode) {
+      res
+        .status(err.statusCode)
+        .json({ name: err.name, status: err.statusCode, message: err.message });
     }
-  });
-});
+  }
+);
 
 const server = http.createServer(app);
 
