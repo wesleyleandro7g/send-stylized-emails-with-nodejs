@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            background-color: #cccccc;
+        }
+
+        table{
+            border-spacing: 0;
+        }
+        td{
+            padding: 0;
+        }
+        img{
+            border: 0;
+        }
+        p{
+            font-family: sans-serif;
+            color: #171a1b;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .status{
+            font-family: sans-serif;
+            font-weight: 600;
+            color:red;
+            font-size: 1rem;
+        }
+        .wrapper{
+            width: 100%;
+            table-layout: fixed;
+            background-color: #cccccc;
+            padding-bottom: 60px;
+        }
+        .main{
+            background-color: #ffffff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #171a1b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <center class="wrapper">
+
+        <table class="main" width="100%">
+
+<!-- TOP BORDER -->
+
+            <tr>
+                <td height="8" style="background-color: #171a1b;"></td>
+            </tr>
+<!-- LOGO SECTION -->
+
+            <tr>
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <td class="two-columns">
+                                <table class="column">
+                                    <tr>
+                                        <!-- <td>
+                                                <img src="<%=logo%>" alt="" style="height: 250px; width: 250px"/>
+                                        </td> -->
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+<!-- BANNER IMAGE -->
+<!-- BOTTOM -->
+
+            <h1>Olá <%=name%></h1>
+            <p>Recebemos a sua solicitação de cadastro em nosso sistema!</p>
+            <p><div class="status">Status atual:</div> Cadastro solicitado.</p>
+            <p>Entraremos em contato quando houver alteração em seu status.</p>
+
+        </table>
+
+    </center>
+</body>
+</html>
