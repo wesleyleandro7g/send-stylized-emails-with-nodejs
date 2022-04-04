@@ -17,15 +17,15 @@ class MailsControllers {
 
   async sendSimpleMailsTemplate(req: Request, res: Response) {
     ejs.renderFile(
-      path.resolve("src", "layouts", "simpleTemplate.ejs"),
-      { name: "Izaque" },
+      path.resolve("src", "layouts", "signUpRequest.ejs"),
+      { companyName: "Izaque", logo: "../../img/banner-gráfico.png" },
       function (err, data) {
         if (err) {
           console.log(err);
         } else {
           var mainOptions = {
-            from: "wesleyleandro.dev@gmail.com",
-            to: "wesleyleandrosantos14@gmail.com",
+            from: "izaquedione@gmail.com",
+            to: "izaquenunes560@gmail.com",
             subject: "Test mails template",
             html: data,
           };
