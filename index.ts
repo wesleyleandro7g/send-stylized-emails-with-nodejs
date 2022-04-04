@@ -22,6 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use("/img", express.static(path.resolve(__dirname, "img")));
+
 app.get("/", (req: Request, res: Response) => {
   res.render("home", {
     title: "Plotmail",
