@@ -7,10 +7,10 @@ import cors from "cors";
 import path from "path";
 import dotenv from "dotenv";
 
-import { TestConnectionController } from "./src/controllers/testConnectionController/TestConnectionController";
+import { MailsControllers } from "./src/controllers/MailsControllers";
 import { InternalError } from "./src/config/generateError";
 
-const testConnection = new TestConnectionController();
+const mailsController = new MailsControllers();
 
 const app = express();
 
@@ -28,7 +28,8 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
-app.get("/test", testConnection.test);
+app.get("/test", mailsController.testConnection);
+app.post("/simpleMail", mailsController.sendSimpleMailsTemplate);
 
 app.use(
   (err: InternalError, req: Request, res: Response, next: NextFunction) => {
