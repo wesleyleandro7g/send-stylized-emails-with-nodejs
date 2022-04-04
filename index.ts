@@ -28,6 +28,12 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
+app.get("/signUpRequest", (req: Request, res: Response) => {
+  res.render("signUpRequest", {
+    name: "Dione",
+  });
+});
+
 app.get("/test", mailsController.testConnection);
 app.post("/simpleMail", mailsController.sendSimpleMailsTemplate);
 
