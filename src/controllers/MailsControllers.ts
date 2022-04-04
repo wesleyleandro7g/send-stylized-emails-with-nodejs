@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { InternalError } from "../config/generateError";
 import transporter from "../config/smtp";
 import ejs from "ejs";
-import fs from "fs";
 import path from "path";
 
 class MailsControllers {
@@ -19,6 +18,7 @@ class MailsControllers {
   async sendSimpleMailsTemplate(req: Request, res: Response) {
     ejs.renderFile(
       path.resolve("src", "layouts", "simpleTemplate.ejs"),
+      { name: "Izaque" },
       function (err, data) {
         if (err) {
           console.log(err);
