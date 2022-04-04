@@ -17,8 +17,7 @@ class MailsControllers {
 
   async sendSimpleMailsTemplate(req: Request, res: Response) {
     ejs.renderFile(
-      path.resolve("src", "layouts", "signUpRequest.ejs"),
-      { companyName: "Izaque" },
+      path.resolve("src", "layouts", "layout1.ejs"),
       function (err, data) {
         if (err) {
           console.log(err);
