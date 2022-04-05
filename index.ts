@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 
 import { MailsControllers } from "./src/controllers/MailsControllers";
 import { InternalError } from "./src/config/generateError";
+import transporter from "./src/config/smtp";
 
 const mailsController = new MailsControllers();
 
@@ -19,21 +20,17 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "src", "layouts"));
 app.set("view engine", "ejs");
 
 app.use("/img", express.static(path.resolve(__dirname, "img")));
 
 app.get("/", (req: Request, res: Response) => {
-  res.render("home", {
-    title: "Plotmail",
-  });
+  res.render("layout1");
 });
 
 app.get("/signUpRequest", (req: Request, res: Response) => {
-  res.render("signUpRequest", {
-    name: "Dione",
-  });
+  res.render("signUpRequest");
 });
 
 app.get("/test", mailsController.testConnection);

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Email de Solicitação de cadastro</title>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+        
+        :root {
+            font-size: 32px;
+            --primary-color: #ff6600;
+            --background-color: #f7f7f7;
+            --background-color-variant: #ffffff;
+            --text-color-white: #ffffff;
+            --gray: #757575;
+            --success: #00B35D;
+            --success-variant: #2BE88D;
+            --error: #FA5757;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+        }
+        h4 {
+            font-weight: 700 bold;
+            font-size: 23px;
+        }
+        h6 {
+            margin-top: 130px;
+            font-weight: 700 bold;
+            font-size: 16px;
+        }
+        span {
+            font-weight: 700;
+        }
+        .container {
+            height: 800px;
+            background-color: #f7f7f7;
+            padding: 0.5rem;
+        }
+        .content {
+            width: 60%;
+            height: 720px;
+            background-color: #ffffff;
+        }
+        .main {
+            margin-top: 25px;
+            font-size: 15px;
+        }
+        .footer {
+            padding: 1rem 0;
+            font-size: 10px;
+        }
+        .banner {
+            height: 150px;
+        }
+    </style>
+</head>
+    <body>
+        <center class="container">
+            <div class="content">
+
+                <header>
+                    <a href="https://takeback.app.br/">
+                        <img class="banner" src="https://takeback.app.br/wp-content/uploads/2022/04/takeback-banner.png" alt="">
+                    </a>
+                </header>
+
+                <div class="main">
+                    <h4>Obrigado pelo interesse em fazer parte da TakeBack!</h4>
+                </div>
+                
+                <div class="main">
+                    <p>
+                        A solicitação de cadastro da empresa {{companyName}} foi 
+                        recebida com sucesso! Estamos trabalhando na validação dos dados 
+                        da empresa, assim que tivermos alguma novidade te atualizaremos por aqui.
+                    </p>
+                </div>
+
+                <div class="main">
+                    <p>
+                        Qualquer dúvida basta entrar em contato conosco pelo
+                            Email.: <span>contato@takeback.app.br</span>  ou pelo nosso
+                                WhatsApp.: <span> (38) 9833-0021</span>.
+                    </p>
+                </div>
+
+                <div class="main">
+                   <h6>Nos vemos em breve :)</h6>
+                </div>
+
+            </div>
+            <div class="main footer">
+                <p>
+                    TAKEBACK LTDA - CNPJ 45.231.359/0001-08<br>
+                    R BARAO DO RIO BRANCO, 513, PORTEIRINHA - MG
+                </p>
+            </div>
+        </center>
+    </body>
+</html>

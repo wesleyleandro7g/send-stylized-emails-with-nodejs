@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { InternalError } from "../config/generateError";
 import transporter from "../config/smtp";
-import ejs from "ejs";
+import hbs from "handlebars";
 import path from "path";
-
+import fs from "fs";
 class MailsControllers {
   async testConnection(req: Request, res: Response) {
     transporter.verify((error, success) => {
@@ -15,7 +15,7 @@ class MailsControllers {
     });
   }
 
-  async sendSimpleMailsTemplate(req: Request, res: Response) {
+  /*   async sendSimpleMailsTemplate(req: Request, res: Response) {
     ejs.renderFile(
       path.resolve("src", "layouts", "layout1.ejs"),
       function (err, data) {
@@ -43,6 +43,40 @@ class MailsControllers {
         }
       }
     );
+  } */
+
+  async sendSimpleMailsTemplate(req: Request, res: Response) {
+    const emailTemplate = fs.readFileSync(
+      path.resolve("src/layouts/template1.hbs"),
+      "utf-8"
+    );
+
+    const template = hbs.compile(emailTemplate);
+
+    const html = template({
+      companyName: "Extra Bom Supermercado",
+    });
+
+    var mailOptions = {
+      from: "izaquedione@gmail.com",
+      to: "izaquenunes560@gmail.com",
+      subject: "Test mails template",
+      html,
+    };
+
+    transporter.sendMail(mailOptions, function (err, info) {
+      if (err) {
+        res.json({
+          msg: "fail",
+        });
+      } else {
+        res.json({
+          msg: "success",
+        });
+      }
+    });
+
+    console.log("4");
   }
 }
 
