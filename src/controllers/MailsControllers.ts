@@ -24,7 +24,12 @@ class MailsControllers {
     const template = hbs.compile(emailTemplate);
 
     const html = template({
-      companyName: "Aqui vai o nome da empresa",
+      title: "Obrigado pelo interesse em fazer parte da TakeBack!",
+      sectionOne:
+        "A solicitação de cadastro da empresa DesenCoder foi recebida com sucesso! Estamos trabalhando na validação dos dados da empresa, assim que tivermos alguma novidade te atualizaremos por aqui.",
+      sectionTwo:
+        "Qualquer dúvida basta entrar em contato conosco pelo Email.: contato@takeback.app.br  ou pelo nosso  WhatsApp.: (38) 9833-0021.",
+      sectionThree: "Nos vemos em breve :)",
     });
 
     var mailOptions = {
