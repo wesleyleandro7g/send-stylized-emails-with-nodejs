@@ -1,79 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <title>Email de Solicitação de cadastro</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Email de Solicitação de cadastro</title>
 
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-        
-        :root {
-            font-size: 32px;
-            --primary-color: #ff6600;
-            --background-color: #f7f7f7;
-            --background-color-variant: #ffffff;
-            --text-color-white: #ffffff;
-            --gray: #757575;
-            --success: #00B35D;
-            --success-variant: #2BE88D;
-            --error: #FA5757;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            font-family: 'Open Sans', sans-serif;
-        }
-        h4 {
-            font-weight: 700 bold;
-            font-size: 23px;
-            line-height: 1.6rem;
-        }
-        h6 {
-            margin-top: 130px;
-            font-weight: 700 bold;
-            font-size: 16px;
-        }
-        span {
-            font-weight: 700;
-        }
-        .container {
-            height: 800px;
-            background-color: #f7f7f7;
-            padding: 0.5rem;
-        }
-        .content {
-            width: 60%;
-            height: 720px;
-            background-color: #ffffff;
-        }
-        .main {
-            margin-top: 25px;
-            font-size: 15px;
-            padding: 0 40px;
-        }
-        .footer {
-            padding: 0 0 2rem 0;
-            font-size: 10px;
-        }
-        .banner {
-            height: 150px;
-        }
-    </style>
-</head>
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+            
+            :root {
+                font-size: 32px;
+                --primary-color: #ff6600;
+                --background-color: #f7f7f7;
+                --background-color-variant: #ffffff;
+                --text-color-white: #ffffff;
+                --gray: #757575;
+                --success: #00B35D;
+                --success-variant: #2BE88D;
+                --error: #FA5757;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Inter', sans-serif;
+                font-family: 'Open Sans', sans-serif;
+            }
+            h4 {
+                font-weight: 700 bold;
+                font-size: 23px;
+                line-height: 1.6rem;
+            }
+            h6 {
+                font-weight: 700 bold;
+                font-size: 16px;
+            }
+            span {
+                font-weight: 700;
+            }
+            .container {
+                background-color: #f7f7f7;
+                padding: 0.5rem 0.5rem 0 0.5rem;
+            }
+            .content {
+                width: 60%;
+                background-color: #ffffff;
+            }
+            .main {
+                margin: 40px 0;
+                padding: 0 40px;
+                font-size: 15px;
+            }
+            .extra-margin {
+                margin: 100px 0;
+            }
+            .footer {
+                padding: 20px;
+                font-size: 10px;
+                background-color: #f7f7f7;
+            }
+            .banner {
+                height: 150px;
+            }
+            @media only screen and (max-width: 600px) {
+                .container {
+                    height: auto;
+                    background-color: #f7f7f7;
+                    padding: 0.5rem;
+                }
+                .content {
+                    width: 100%;
+                    height: auto;
+                    background-color: #ffffff;
+                }
+                .main {
+                    padding: 0 10px;
+                }
+                .footer {
+                    padding: 20px;
+                }
+            }
+        </style>
+    </head>
     <body>
         <center class="container">
             <div class="content">
-
-                <header>
+                <div>
                     <a href="https://takeback.app.br/">
                         <img class="banner" src="https://takeback.app.br/wp-content/uploads/2022/04/takeback-banner.png" alt="">
                     </a>
-                </header>
+                </div>
 
                 <div class="main">
                     <h4>Obrigado pelo interesse em fazer parte da TakeBack!</h4>
@@ -95,16 +113,16 @@
                     </p>
                 </div>
 
-                <div class="main">
-                   <h6>Nos vemos em breve :)</h6>
+                <div class="main extra-margin">
+                    <h6>Nos vemos em breve :)</h6>
                 </div>
 
-            </div>
-            <div class="main footer">
-                <p>
-                    TAKEBACK LTDA - CNPJ 45.231.359/0001-08<br>
-                    R BARAO DO RIO BRANCO, 513, PORTEIRINHA - MG
-                </p>
+                <div class="main footer">
+                    <p>
+                        TAKEBACK LTDA - CNPJ 45.231.359/0001-08<br>
+                        R BARAO DO RIO BRANCO, 513, PORTEIRINHA - MG
+                    </p>
+                </div>
             </div>
         </center>
     </body>
